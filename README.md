@@ -1,4 +1,4 @@
-# Predicting Atomization Energies
+# Predicting Atomization Energies (QM7 Dataset)
 
 ## Introduction
 
