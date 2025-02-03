@@ -54,7 +54,7 @@ Since each molecule has different number of atoms, their true Coulomb matrices h
 **Sorting Coulomb matrix.** Since the ordering of atoms in the Coulomb matrix can be arbitrary, we would like to impose a specific row order on Coulomb matrices. One way to achieve this is to pick the permutation of atoms in Coulomb matrix $C$ such that
 
 $$
-||C_{i}|| \leq ||C_{i+1}||
+\lVert C_{i} \rVert \leq \lVert C_{i+1}\rVert
 $$
 
 with $C_{i}$ being the $i^{th}$ row of $C$. Note that two different molecules have necessarily different associated sorted Coulomb matrices [1, Section 2.2].
@@ -84,9 +84,9 @@ however worse when we include the new features. This might be due to two reasons
 
 To resolve the problem of arbitrary permutation of atoms, [1] proposes the following procedure to generate random (and sorted) Coulomb matrices:
 
-1.  Take a Coulomb matrix $C \in \mathbb{R}^{d \times d}$ and compute the row norms $(||C_{1}||, ..., ||C_{d}||)$
+1.  Take a Coulomb matrix $C \in \mathbb{R}^{d \times d}$ and compute the row norms $(\lVert C_{1} \rVert, ..., \lVert C_{d} \rVert)$
 
-2.  Draw $n \sim N(0, \sigma I)$ and find the permutation $P$ that sorts $C$ according to the new row norms $(||C_{1}||+n, ..., ||C_{d}||+n)$
+2.  Draw $n \sim N(0, \sigma I)$ and find the permutation $P$ that sorts $C$ according to the new row norms $(\lVert C_{1} \rVert + n, ..., \lVert C_{d} \rVert + n)$
 
 3.  Permute the rows and columns according to $P$
 
